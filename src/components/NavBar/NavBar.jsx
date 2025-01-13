@@ -30,17 +30,17 @@ const NavBar = () => {
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",  
-        })}><NavLink to='/' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-orange-500 underline' : 'hover:text-red-500'}>First NavBar</NavLink></li>
+        })}><NavLink to='/' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 underline' : 'hover:text-green-500'}>Home</NavLink></li>
 
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",  
-        })}><NavLink to='/secondNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-orange-500 underline' : 'hover:text-red-500'}>Second NavBar</NavLink></li>
+        })}><NavLink to='/secondNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 underline' : 'hover:text-green-500'}>Second NavBar</NavLink></li>
 
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",  
-        })}><NavLink to='/thirdNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-orange-500 underline' : 'hover:text-red-500'}>Third NavBar</NavLink></li>
+        })}><NavLink to='/thirdNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 underline' : 'hover:text-green-500'}>Third NavBar</NavLink></li>
          
     </>;
 
@@ -63,7 +63,7 @@ const NavBar = () => {
                                 )}
                             </div>
                             <Link to='/'> <p title="Home" className="text-3xl font-bold">
-                                <span className="">NavBar</span> 
+                            <span className="text-green-500">BD</span><span className="text-xl">Jobs</span> 
                             </p>
                             </Link>
                         </div>
@@ -90,7 +90,7 @@ const NavBar = () => {
                                                     <BsCart4 className="text-[1.8rem]" />
                                                     {
                                                         carts?.length > 0 && <div className=" absolute top-[-10%] right-[-15%] min-w-[20px] min-h-[20px] text-white text-center">
-                                                            <span className="text-sm bg-red-500 p-1 rounded-full w-full h-full">
+                                                            <span className="text-sm bg-green-500 p-1 rounded-full w-full h-full">
                                                                 {carts?.length}
                                                             </span>
                                                         </div>
@@ -114,13 +114,13 @@ const NavBar = () => {
                                                     behavior: "smooth",  
                                                 })}> <li onClick={() => setProfile(!profile)} className="flex gap-1 items-center text-sm hover:bg-base-300 px-1  py-1 rounded-md"><span><PiUserCircleThin></PiUserCircleThin></span>Profile</li></Link>
 
-                                                <button className="text-sm w-full flex gap-1 items-center text-red-400 hover:bg-base-300 px-1 py-1 rounded-md">LogOut <MdLogout></MdLogout></button>
+                                                <button className="text-sm w-full flex gap-1 items-center text-green-400 hover:bg-base-300 px-1 py-1 rounded-md">LogOut <MdLogout></MdLogout></button>
                                             </div>
                                         </ul>
                                     </div>
                                 </div>
                                 : <div className="px-5">
-                                    <Link to='/loginRegister/login' className="px-3 py-1 rounded-md font-bold max-sm:btn-sm text-orange-500 border border-orange-500 hover:shadow-md">Login</Link>
+                                    <Link to='/loginRegister/login' className="px-3 py-1 rounded-md font-bold max-sm:btn-sm text-green-500 border border-green-500 hover:shadow-md">Login</Link>
                                 </div>
                         }
                     </div>
@@ -134,7 +134,7 @@ const NavBar = () => {
                 <div className="sticky top-0 bg-base-100 px-4 py-2 md:py-[11px] border-b border-gray-700">
                     <div className="flex justify-between items-center">
                         <p className="text-3xl font-bold mb-0">
-                        <span className="">NavBar</span>
+                        <span className="text-green-500">BD</span><span className="text-xl">Jobs</span>
                         </p>
                         <a onClick={closeMenu} className="hover:text-pink-500 cursor-pointer border-2">
                             <LiaTimesSolid className="text-xl lg:text-2xl cursor-pointer" />
