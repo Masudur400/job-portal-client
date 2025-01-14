@@ -11,7 +11,7 @@ import { Link, NavLink } from "react-router-dom";
  
 const NavBar = () => {
     const [profile, setProfile] = useState(false); 
-    const [user, setUser]= useState(true)
+    const [user, setUser]= useState(false)
     const [carts] = useState(true)
     
     const [click, setClick] = useState(false); 
@@ -30,17 +30,17 @@ const NavBar = () => {
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",  
-        })}><NavLink to='/' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 underline' : 'hover:text-green-500'}>Home</NavLink></li>
+        })}><NavLink to='/' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Home</NavLink></li>
 
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",  
-        })}><NavLink to='/secondNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 underline' : 'hover:text-green-500'}>Second NavBar</NavLink></li>
+        })}><NavLink to='/secondNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Second NavBar</NavLink></li>
 
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",  
-        })}><NavLink to='/thirdNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 underline' : 'hover:text-green-500'}>Third NavBar</NavLink></li>
+        })}><NavLink to='/thirdNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Third NavBar</NavLink></li>
          
     </>;
 
@@ -120,7 +120,7 @@ const NavBar = () => {
                                     </div>
                                 </div>
                                 : <div className="px-5">
-                                    <Link to='/loginRegister/login' className="px-3 py-1 rounded-md font-bold max-sm:btn-sm text-green-500 border border-green-500 hover:shadow-md">Login</Link>
+                                    <Link to='/loginRegister/login' className="px-3 py-1  font-bold max-sm:btn-sm bg-green-500 text-white  hover:shadow-md">Login</Link>
                                 </div>
                         }
                     </div>
