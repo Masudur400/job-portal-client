@@ -63,7 +63,7 @@ const NavBar = () => {
                                 )}
                             </div>
                             <Link to='/'> <p title="Home" className="text-3xl font-bold">
-                            <span className="text-green-500">BD</span><span className="text-xl">Jobs</span> 
+                            <span className="text-green-500">Job</span><span className="text-xl">Sphere</span> 
                             </p>
                             </Link>
                         </div>
@@ -134,7 +134,7 @@ const NavBar = () => {
                 <div className="sticky top-0 bg-base-100 px-4 py-2 md:py-[11px] border-b border-gray-700">
                     <div className="flex justify-between items-center">
                         <p className="text-3xl font-bold mb-0">
-                        <span className="text-green-500">BD</span><span className="text-xl">Jobs</span>
+                        <span className="text-green-500">Job</span><span className="text-xl">Sphere</span>
                         </p>
                         <a onClick={closeMenu} className="hover:text-pink-500 cursor-pointer border-2">
                             <LiaTimesSolid className="text-xl lg:text-2xl cursor-pointer" />
