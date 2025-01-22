@@ -8,13 +8,13 @@ import { PiUserCircleThin } from "react-icons/pi";
 import { SlMenu } from "react-icons/sl";
 import { Link, NavLink } from "react-router-dom";
 
- 
+
 const NavBar = () => {
-    const [profile, setProfile] = useState(false); 
-    const [user, setUser]= useState(false)
+    const [profile, setProfile] = useState(false);
+    const [user, setUser] = useState(false)
     const [carts] = useState(true)
-    
-    const [click, setClick] = useState(false); 
+
+    const [click, setClick] = useState(false);
 
 
     const handleClick = () => setClick(!click);
@@ -24,27 +24,27 @@ const NavBar = () => {
     };
 
 
-     
+
 
     const routes = <>
         <li onClick={() => window.scrollTo({
             top: 0,
-            behavior: "smooth",  
+            behavior: "smooth",
         })}><NavLink to='/' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Home</NavLink></li>
 
         <li onClick={() => window.scrollTo({
             top: 0,
-            behavior: "smooth",  
+            behavior: "smooth",
         })}><NavLink to='/postJobs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Post Jobs</NavLink></li>
 
         <li onClick={() => window.scrollTo({
             top: 0,
-            behavior: "smooth",  
+            behavior: "smooth",
         })}><NavLink to='/thirdNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Third NavBar</NavLink></li>
-         
+
     </>;
 
-     
+
 
     return (
         <div className="shadow-md border-b border-base-300 fixed z-10 w-full top-0">
@@ -63,7 +63,7 @@ const NavBar = () => {
                                 )}
                             </div>
                             <Link to='/'> <p title="Home" className="text-3xl font-bold">
-                            <span className="text-green-500">Job</span><span className="text-xl">Sphere</span> 
+                                <span className="text-green-500">Job</span><span className="text-xl">Sphere</span>
                             </p>
                             </Link>
                         </div>
@@ -84,7 +84,7 @@ const NavBar = () => {
                                         <div className="flex gap-5 md:gap-10 justify-start items-center">
                                             <Link to="/" onClick={() => window.scrollTo({
                                                 top: 0,
-                                                behavior: "smooth",  
+                                                behavior: "smooth",
                                             })}>
                                                 <div className="relative">
                                                     <BsCart4 className="text-[1.8rem]" />
@@ -98,10 +98,10 @@ const NavBar = () => {
                                                 </div>
                                             </Link>
 
-                                            <div className="flex justify-center items-center border-black rounded-full mt-1"> 
-                                                <Avatar 
-                                                // name={name?.charAt(0)}
-                                                 src={'photo'} alt='img' className="rounded-full" size="45" onClick={() => setProfile(!profile)}></Avatar>
+                                            <div className="flex justify-center items-center border-black rounded-full mt-1">
+                                                <Avatar
+                                                    // name={name?.charAt(0)}
+                                                    src={'photo'} alt='img' className="rounded-full" size="45" onClick={() => setProfile(!profile)}></Avatar>
                                             </div>
                                         </div>
                                         <ul className={`absolute  space-y-5  ${profile ? 'bg-base-100  shadow-lg border md:min-w-32 px-3 py-2 z-[99]  rounded-md right-1  md:right-0' : 'hidden'}`}>
@@ -111,7 +111,7 @@ const NavBar = () => {
 
                                                 <Link to='/' onClick={() => window.scrollTo({
                                                     top: 0,
-                                                    behavior: "smooth",  
+                                                    behavior: "smooth",
                                                 })}> <li onClick={() => setProfile(!profile)} className="flex gap-1 items-center text-sm hover:bg-base-300 px-1  py-1 rounded-md"><span><PiUserCircleThin></PiUserCircleThin></span>Profile</li></Link>
 
                                                 <button className="text-sm w-full flex gap-1 items-center text-green-400 hover:bg-base-300 px-1 py-1 rounded-md">LogOut <MdLogout></MdLogout></button>
@@ -134,7 +134,7 @@ const NavBar = () => {
                 <div className="sticky top-0 bg-base-100 px-4 py-2 md:py-[11px] border-b border-gray-700">
                     <div className="flex justify-between items-center">
                         <p className="text-3xl font-bold mb-0">
-                        <span className="text-green-500">Job</span><span className="text-xl">Sphere</span>
+                            <span className="text-green-500">Job</span><span className="text-xl">Sphere</span>
                         </p>
                         <a onClick={closeMenu} className="hover:text-pink-500 cursor-pointer border-2">
                             <LiaTimesSolid className="text-xl lg:text-2xl cursor-pointer" />
