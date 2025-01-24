@@ -1,16 +1,41 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
+const imageHostingKey = import.meta.env.VITE_image_hosting_key;
+const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageHostingKey}`;
+
 const Register = () => {
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
         const name = form.get('name')
         const email = form.get('email')
         const password = form.get('password')
         const role = form.get('role')
-        console.log(email, password, name, role);
+        const photoFile = form.get('photo');
+        
+
+
+        try {
+            const imageData = new FormData();
+            imageData.append('image', photoFile);
+
+            const imageRes = await axios.post(imageHostingApi, imageData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+
+            const imageUrl = imageRes.data.data.url;
+            console.log(email, password, name, role, imageUrl);
+        } catch (error) {
+            console.error('Error uploading the image or submitting the form:', error);
+        }
+
     }
 
     return (
@@ -36,6 +61,10 @@ const Register = () => {
                         <option value="employee">Employee</option>
                         <option value="jobSeeker">Job Seeker</option>
                     </select>
+                </div>
+                <div>
+                <p className="font-semibold text-sm md:text-base mb-2">Your Photo</p>
+                <input type="file" placeholder="" name="photo" id="" className="border-2 px-3 md:py-1 w-full" />
                 </div>
                 <input type="submit" value="Register" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' />
             </form>
