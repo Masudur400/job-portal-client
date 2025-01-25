@@ -39,7 +39,7 @@ const Register = () => {
     }
 
     return (
-        <div className="lg:w-1/3 md:w-1/2 mx-auto my-20 md:p-5 p-3 rounded-lg border border-x-4 border-green-500 shadow-md max-sm:mx-4 ">
+        <div className="lg:w-1/3 md:w-1/2 mx-auto   md:p-5 p-3 rounded-lg border border-x-4 border-green-500 shadow-md max-sm:mx-4 ">
             <h3 className="md:text-3xl text-xl font-medium text-center my-2">Please Register</h3>
             <form onSubmit={handleRegister}>
                 <div>
@@ -63,7 +63,7 @@ const Register = () => {
                     </select>
                 </div>
                 <div>
-                <p className="font-semibold text-sm md:text-base mb-2">Your Photo</p>
+                <p className="max-sm-text-sm text-medium my-2">Your Photo*</p>
                 <input type="file" placeholder="" name="photo" id="" className="border-2 px-3 md:py-1 w-full" />
                 </div>
                 <input type="submit" value="Register" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' />
