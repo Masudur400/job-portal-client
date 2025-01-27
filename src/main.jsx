@@ -11,7 +11,8 @@ import Home from './components/Home/Home';
 import LoginAndRegister from './components/Login&Register/LoginAndRegister';
 import Login from './components/Login&Register/Login';
 import Register from './components/Login&Register/Register';
-import PostJobs from './components/PostJobs/PostJobs';
+import PostJobs from './components/PostJobs/PostJobs'; 
+import UpdateJobs from './components/PostJobs/UpdateJobs';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path:'/postJobs',
         element:<PostJobs></PostJobs>
+      },
+      {
+        path:'/updateJobs',
+        element:  <UpdateJobs></UpdateJobs>
       }
     ]
   },

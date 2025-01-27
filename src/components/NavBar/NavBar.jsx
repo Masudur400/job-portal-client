@@ -40,7 +40,7 @@ const NavBar = () => {
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",
-        })}><NavLink to='/thirdNavbar' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Third NavBar</NavLink></li>
+        })}><NavLink to='/updateJobs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>UpdateJobs</NavLink></li>
 
     </>;
 
