@@ -114,13 +114,13 @@ const NavBar = () => {
                                                     behavior: "smooth",
                                                 })}> <li onClick={() => setProfile(!profile)} className="flex gap-1 items-center text-sm hover:bg-base-300 px-1  py-1 rounded-md"><span><PiUserCircleThin></PiUserCircleThin></span>Profile</li></Link>
 
-                                                <button className="text-sm w-full flex gap-1 items-center text-green-400 hover:bg-base-300 px-1 py-1 rounded-md">LogOut <MdLogout></MdLogout></button>
+                                                <button className="text-sm w-full flex gap-1 items-center text-green-400 hover:bg-base-300 px-1 py-1 rounded-sm">LogOut <MdLogout></MdLogout></button>
                                             </div>
                                         </ul>
                                     </div>
                                 </div>
                                 : <div className="px-5">
-                                    <Link to='/loginRegister/login' className="px-3 py-1  font-bold max-sm:btn-sm bg-green-500 text-white  hover:shadow-md">Login</Link>
+                                    <Link to='/loginRegister/login' className="px-3 py-1  font-bold max-sm:btn-sm bg-green-500 text-white  hover:shadow-md rounded-sm">Login</Link>
                                 </div>
                         }
                     </div>

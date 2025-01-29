@@ -15,7 +15,7 @@ const Banner = () => {
                         </p>
                     </div>
                     <div className="flex justify-center items-center">
-                        <button className="text-white font-medium text-xl bg-green-500 px-4 py-2 rounded-sm ">Get Start</button>
+                        <button className="text-white font-medium text-xl bg-green-500 px-4 py-2 rounded-sm hover:bg-green-600">Get Start</button>
                     </div>
                 </div>
             </div>
