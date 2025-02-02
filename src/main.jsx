@@ -13,6 +13,7 @@ import Login from './components/Login&Register/Login';
 import Register from './components/Login&Register/Register';
 import PostJobs from './components/PostJobs/PostJobs'; 
 import UpdateJobs from './components/PostJobs/UpdateJobs';
+import AuthProviders from './components/Providers/AuthProviders';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+     <AuthProviders>
      <RouterProvider router={router} />
+     </AuthProviders>
   </StrictMode>,
 )
