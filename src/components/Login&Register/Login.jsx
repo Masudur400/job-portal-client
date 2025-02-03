@@ -1,44 +1,7 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const Login = () => {
-
-//     const handleLogin = (e) => {
-//         e.preventDefault()
-//         const form = new FormData(e.currentTarget)
-//         const email = form.get('email')
-//         const password = form.get('password')
-//         console.log(email, password);
-//     }
-
-//     return (
-//         <div className="lg:w-1/3 md:w-1/2 mx-auto my-20 md:p-5 p-3 rounded-lg border border-x-4 border-green-500 shadow-md max-sm:mx-4 ">
-//             <h3 className="md:text-3xl text-xl font-medium text-center my-2">Please Login</h3>
-//             <form onSubmit={handleLogin}>
-//                 <div>
-//                     <p className='max-sm-text-sm  my-2'>Email*</p>
-//                     <input type="email" name="email" id="" placeholder='Enter Email' className='border-2 px-3 md:py-1 w-full' />
-//                 </div>
-//                 <div>
-//                     <p className='max-sm-text-sm  my-2'>Password*</p>
-//                     <input type="password" name="password" id="" placeholder='Enter Password' className='border-2 px-3 md:py-1 w-full' />
-//                 </div>
-//                 <input type="submit" value="Login" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' />
-//             </form>
-//             <p className='my-3'>Don't have an account <Link to='/loginRegister/register' className='font-medium text-red-500'>please register</Link></p>
-//         </div>
-//     );
-// };
-
-// export default Login;
-
-
-
 import { Helmet } from "react-helmet";
 import { FaRegEye, FaRegEyeSlash, FaXmark } from "react-icons/fa6"; 
 import { Link, useNavigate } from "react-router-dom"; 
-import Swal from "sweetalert2";
-// import Loading from "../../Loading/Loading";
+import Swal from "sweetalert2"; 
 import { useState } from "react"; 
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import useAuth from "../Hooks/useAuth";
@@ -81,11 +44,7 @@ const Login = () => {
     }
 
 
-     
-
-    // if (loading) {
-    //     return <Loading></Loading>
-    // }
+      
 
     return (
         <div className=" lg:w-1/3 md:w-1/2 mx-auto md:p-5 p-3 rounded-lg border border-x-4 border-green-500 shadow-md max-sm:mx-4 ">

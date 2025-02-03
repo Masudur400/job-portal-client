@@ -7,12 +7,16 @@ import { MdLogout } from "react-icons/md";
 import { PiUserCircleThin } from "react-icons/pi";
 import { SlMenu } from "react-icons/sl";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
 const NavBar = () => {
+     
     const [profile, setProfile] = useState(false);
-    const [user, setUser] = useState(false)
-    const [carts] = useState(true)
+    const { user, logOut, loading } = useAuth();
+    const axiosSecure = useAxiosSecure();
 
     const [click, setClick] = useState(false);
 
@@ -23,6 +27,19 @@ const NavBar = () => {
         setProfile(false);
     };
 
+    const { data: users = {}, isLoading } = useQuery({
+        queryKey: ['users', user?.email, axiosSecure],
+        enabled: !loading,
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/users/${user?.email}`);
+            return res.data;
+        }
+    });
+    const { photo, name } = users; 
+
+    if(isLoading || loading){
+        return <p>Loading...</p>
+    }
 
 
 
@@ -62,8 +79,8 @@ const NavBar = () => {
                                     <SlMenu className="text-2xl lg:text-3xl cursor-pointer" />
                                 )}
                             </div>
-                            <Link to='/'> <p title="Home" className="text-3xl font-bold">
-                                <span className="text-green-500">Company</span><span className="text-xl"> </span>
+                            <Link to='/'> <p title="Home" className="text-4xl font-bold">
+                                <span className="">NextGen</span><span className="text-xl"></span>
                             </p>
                             </Link>
                         </div>
@@ -82,7 +99,7 @@ const NavBar = () => {
                                 <div className="mr-2 lg:mr-6">
                                     <div className="relative">
                                         <div className="flex gap-5 md:gap-10 justify-start items-center">
-                                            <Link to="/" onClick={() => window.scrollTo({
+                                            {/* <Link to="/" onClick={() => window.scrollTo({
                                                 top: 0,
                                                 behavior: "smooth",
                                             })}>
@@ -96,12 +113,12 @@ const NavBar = () => {
                                                         </div>
                                                     }
                                                 </div>
-                                            </Link>
+                                            </Link> */}
 
                                             <div className="flex justify-center items-center border-black rounded-full mt-1">
                                                 <Avatar
-                                                    // name={name?.charAt(0)}
-                                                    src={'photo'} alt='img' className="rounded-full" size="45" onClick={() => setProfile(!profile)}></Avatar>
+                                                    name={name?.charAt(0)}
+                                                    src={photo} alt='img' className="rounded-full" size="45" onClick={() => setProfile(!profile)}></Avatar>
                                             </div>
                                         </div>
                                         <ul className={`absolute  space-y-5  ${profile ? 'bg-base-100  shadow-lg border md:min-w-32 px-3 py-2 z-[99]  rounded-md right-1  md:right-0' : 'hidden'}`}>
@@ -114,7 +131,7 @@ const NavBar = () => {
                                                     behavior: "smooth",
                                                 })}> <li onClick={() => setProfile(!profile)} className="flex gap-1 items-center text-sm hover:bg-base-300 px-1  py-1 rounded-md"><span><PiUserCircleThin></PiUserCircleThin></span>Profile</li></Link>
 
-                                                <button className="text-sm w-full flex gap-1 items-center text-green-400 hover:bg-base-300 px-1 py-1 rounded-sm">LogOut <MdLogout></MdLogout></button>
+                                                <button onClick={() => logOut()} className="text-sm w-full flex gap-1 items-center text-red-500 hover:bg-base-300 px-1 py-1 rounded-sm">LogOut <MdLogout></MdLogout></button>
                                             </div>
                                         </ul>
                                     </div>
@@ -133,8 +150,8 @@ const NavBar = () => {
             >
                 <div className="sticky top-0 bg-base-100 px-4 py-2 md:py-[11px] border-b border-gray-700">
                     <div className="flex justify-between items-center">
-                        <p className="text-3xl font-bold mb-0">
-                            <span className="text-green-500">Company</span><span className="text-xl"> </span>
+                        <p className="text-4xl font-bold mb-0">
+                            <span className="">NextGen</span><span className="text-xl"> </span>
                         </p>
                         <a onClick={closeMenu} className="hover:text-pink-500 cursor-pointer border-2">
                             <LiaTimesSolid className="text-xl lg:text-2xl cursor-pointer" />
