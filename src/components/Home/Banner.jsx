@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -15,7 +16,7 @@ const Banner = () => {
                         </p>
                     </div>
                     <div className="flex justify-center items-center">
-                        <button className="text-white font-medium text-xl bg-green-500 px-4 py-2 rounded-sm hover:bg-green-600">Get Start</button>
+                        <Link to="/jobs"><button className="text-white font-medium text-xl bg-green-500 px-4 py-2 rounded-sm hover:bg-green-600">Get Start</button></Link>
                     </div>
                 </div>
             </div>
