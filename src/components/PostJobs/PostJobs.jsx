@@ -10,8 +10,7 @@ const PostJobs = () => {
 
     const handlePostJob = async (e)=>{
         e.preventDefault()
-        const form = new FormData(e.currentTarget)
-        const companyName = form.get('companyName')
+        const form = new FormData(e.currentTarget) 
         const jobTitle = form.get('jobTitle')
         const jobSkills = form.get('jobSkills') 
         const photoFile = form.get('photo');
@@ -42,10 +41,7 @@ const PostJobs = () => {
             <h3 className="md:text-3xl text-xl font-medium text-center my-2">Create Job</h3>
 
             <form onSubmit={handlePostJob}>
-                <div>
-                    <p className='max-sm-text-sm text-medium my-2'>Company Name*</p>
-                    <input type="text" name="companyName" id="" placeholder='Enter Job Title' className='border-2 px-3 md:py-1 w-full' />
-                </div>
+                 
                 <div>
                     <p className='max-sm-text-sm text-medium my-2'>Job Title*</p>
                     <input type="text" name="jobTitle" id="" placeholder='Enter Job Title' className='border-2 px-3 md:py-1 w-full' />
@@ -55,7 +51,7 @@ const PostJobs = () => {
                     <input type="text" name="jobSkills" id="" placeholder='Enter Skills' className='border-2 px-3 md:py-1 w-full' />
                 </div>
                 <div>
-                    <p className="max-sm-text-sm text-medium my-2">Your Photo*</p>
+                    <p className="max-sm-text-sm text-medium my-2">Cover Photo*</p>
                     <input type="file" placeholder="" name="photo" id="" className="border-2 px-3 md:py-1 w-full" />
                 </div>
                 <div>

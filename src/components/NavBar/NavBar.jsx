@@ -123,10 +123,10 @@ const NavBar = () => {
                                         </div>
                                         <ul className={`absolute  space-y-5  ${profile ? 'bg-base-100  shadow-lg border md:min-w-32 px-3 py-2 z-[99]  rounded-md right-1  md:right-0' : 'hidden'}`}>
                                             <div className="space-y-1 py-4">
-                                                <p className="text-sm font-medium"> User Name</p>
+                                                <p className="text-sm font-medium"> {name}</p>
                                                 <div className="divider"></div>
 
-                                                <Link to='/' onClick={() => window.scrollTo({
+                                                <Link to='/profile' onClick={() => window.scrollTo({
                                                     top: 0,
                                                     behavior: "smooth",
                                                 })}> <li onClick={() => setProfile(!profile)} className="flex gap-1 items-center text-sm hover:bg-base-300 px-1  py-1 rounded-md"><span><PiUserCircleThin></PiUserCircleThin></span>Profile</li></Link>

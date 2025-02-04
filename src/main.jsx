@@ -19,6 +19,7 @@ import Register from './components/Login&Register/Register';
 import PostJobs from './components/PostJobs/PostJobs'; 
 import UpdateJobs from './components/PostJobs/UpdateJobs';
 import AuthProviders from './components/Providers/AuthProviders';
+import Profile from './components/Profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:'/updateJobs',
         element:  <UpdateJobs></UpdateJobs>
+      },
+      {
+        path:'/profile',
+        element:<Profile></Profile>
       }
     ]
   },
