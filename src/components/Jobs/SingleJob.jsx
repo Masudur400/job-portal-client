@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 
 const SingleJob = ({ job }) => {
 
-    const { jobTitle, jobSkills, cover, jobDescription } = job
+    const { _id,jobTitle, jobSkills, cover, jobDescription } = job
 
     return (
-        <Link to='/'>
+        <Link onClick={() => window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })} to={`/job/${_id}`}>
         <div className='p-3 border-base-200 border rounded-md shadow-sm flex flex-col h-72 hover:shadow-md'>
             <div className='flex-grow'>
                 <img src={cover} alt="cover" className='w-96 h-40' />
