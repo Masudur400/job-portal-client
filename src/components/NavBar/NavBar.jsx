@@ -13,7 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 
 
 const NavBar = () => {
-     
+
     const [profile, setProfile] = useState(false);
     const { user, logOut, loading } = useAuth();
     const axiosSecure = useAxiosSecure();
@@ -35,9 +35,9 @@ const NavBar = () => {
             return res.data;
         }
     });
-    const { photo, name } = users; 
+    const { photo, name } = users;
 
-    if(isLoading || loading){
+    if (isLoading || loading) {
         return <p>Loading...</p>
     }
 
@@ -84,7 +84,7 @@ const NavBar = () => {
                                     <SlMenu className="text-2xl lg:text-3xl cursor-pointer" />
                                 )}
                             </div>
-                            <Link to='/'> <p title="Home" className="text-4xl font-bold">
+                            <Link to='/'> <p title="Home" className="lg:text-4xl text-xl md:text-2xl font-bold">
                                 <span className="">NextGen</span><span className="text-xl"></span>
                             </p>
                             </Link>
@@ -155,7 +155,7 @@ const NavBar = () => {
             >
                 <div className="sticky top-0 bg-base-100 px-4 py-2 md:py-[11px] border-b border-gray-700">
                     <div className="flex justify-between items-center">
-                        <p className="text-4xl font-bold mb-0">
+                        <p className="lg:text-4xl text-xl md:text-2xl font-bold">
                             <span className="">NextGen</span><span className="text-xl"> </span>
                         </p>
                         <a onClick={closeMenu} className="hover:text-pink-500 cursor-pointer border-2">

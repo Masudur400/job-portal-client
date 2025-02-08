@@ -180,7 +180,7 @@ const Profile = () => {
                 />
                 <div className="flex gap-4">
                   {
-                    preview && <button className="px-2 py-1 w-fit h-fit border-2 hover:shadow-md border-orange-500 bg-base-300 text-orange-500  rounded-md  mt-12 font-medium absolute bottom-2 right-6">
+                    preview && <button className="px-2 py-1 w-fit h-fit border-2 hover:shadow-md border-green-500 bg-base-300 text-green-500  rounded-md  mt-12 font-medium absolute bottom-2 right-6">
                       <IoCheckmarkSharp />
                     </button>
                   }
@@ -246,7 +246,7 @@ const Profile = () => {
                     </div>
                 }
 
-                <button type="submit" className="w-full px-3 py-1 rounded-md border border-orange-500 text-orange-500 font-medium">Save</button>
+                <button type="submit" className="w-full px-3 py-1 rounded-md border border-green-500 text-green-500 font-medium">Save</button>
 
                 <p onClick={() => setEditInfo(false)} className="text-2xl text-red-500 p-1 border bg-base-200 -top-5 -left-4 w-fit absolute rounded-full cursor-pointer"><RxCross2 /></p>
               </form>

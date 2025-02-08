@@ -52,7 +52,7 @@ const Login = () => {
                 <title>Login</title>
             </Helmet>
             {/* <div className="flex justify-end">
-                <Link to='/' className="p-1 border-2 border-orange-500 rounded-full"><FaXmark className="md:text-3xl text-orange-600 my-0"></FaXmark></Link>
+                <Link to='/' className="p-1 border-2 border-green-500 rounded-full"><FaXmark className="md:text-3xl text-green-600 my-0"></FaXmark></Link>
             </div> */}
             <h3 className="md:text-3xl text-xl font-medium text-center my-2">Please LogIn</h3>
             <form onSubmit={handleLogin} className="">
