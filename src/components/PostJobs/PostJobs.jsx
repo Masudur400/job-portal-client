@@ -85,7 +85,7 @@ const PostJobs = () => {
                 </div>
                 <div>
                     <p className="max-sm-text-sm text-medium my-2">Cover Photo*</p>
-                    <input required type="file" placeholder="" name="photo" id="" className="border-2 px-3 md:py-1 w-full" />
+                    <input required type="file" placeholder="" name="photo" id="" className="border-2 pr-3  w-full" />
                 </div>
                 <div>
                     <p className="max-sm-text-sm text-medium my-2">Job Description*</p>

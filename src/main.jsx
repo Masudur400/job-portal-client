@@ -22,6 +22,7 @@ import AuthProviders from './components/Providers/AuthProviders';
 import Profile from './components/Profile/Profile';
 import AllJobs from './components/Jobs/AllJobs';
 import JobDetails from './components/Jobs/JobDetails';
+import ManageAllJobs from './components/ManageJobs/ManageAllJobs';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
       {
         path:'/job/:id',
         element: <JobDetails></JobDetails>
+      },
+      // fo admin
+      {
+        path:'/allJobs',
+        element: <ManageAllJobs></ManageAllJobs>
       }
     ]
   },

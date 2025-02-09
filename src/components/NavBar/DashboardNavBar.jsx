@@ -41,13 +41,13 @@ const DashboardNavBar = () => {
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",
-        })}><NavLink to='/' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Home</NavLink></li> 
+        })}><NavLink to='/postJobs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Post Jobs</NavLink></li>
 
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",
-        })}><NavLink to='/postJobs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Post Jobs</NavLink></li> 
-         
+        })}><NavLink to='/allJobs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>All Jobs</NavLink></li>
+
 
     </>
 
@@ -79,14 +79,14 @@ const DashboardNavBar = () => {
                         >
                             {/* Fixed Header in Burger Menu */}
                             <div className="sticky top-0 bg-base-200 px-4 py-3 md:py-4 border-b border-gray-700">
-                            <div className="flex justify-between items-center">
-                        <p className="lg:text-4xl text-xl md:text-2xl font-bold">
-                            <span className="">NextGen</span><span className="text-xl"> </span>
-                        </p>
-                        <a onClick={closeMenu} className="hover:text-pink-500 cursor-pointer border-2">
-                            <LiaTimesSolid className="text-xl lg:text-2xl cursor-pointer" />
-                        </a>
-                    </div>
+                                <div className="flex justify-between items-center">
+                                    <p className="lg:text-4xl text-xl md:text-2xl font-bold">
+                                        <span className="">NextGen</span><span className="text-xl"> </span>
+                                    </p>
+                                    <a onClick={closeMenu} className="hover:text-pink-500 cursor-pointer border-2">
+                                        <LiaTimesSolid className="text-xl lg:text-2xl cursor-pointer" />
+                                    </a>
+                                </div>
                             </div>
 
                             {/* Scrollable Content with Hidden Scrollbar */}

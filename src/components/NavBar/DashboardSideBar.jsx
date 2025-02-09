@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useAuth from '../Hooks/useAuth';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaAngleDown, FaChevronRight } from 'react-icons/fa';
 import { MdLogin, MdLogout } from 'react-icons/md';
 
@@ -44,12 +44,12 @@ const DashboardSideBar = () => {
 
 
                 <div className={` ${openJobs ? 'bg-base-200' : ''} bg-opacity-50 space-y-3 rounded-md`}>
-                    <p onClick={() => setOpenJobs(!openJobs)} className={`flex justify-between items-center px-3 py-1  hover:bg-base-300 rounded-md cursor-pointer w-full`}><span>Jobs</span> {openJobs ? <FaAngleDown /> : <FaChevronRight />}</p>
+                    <p onClick={() => setOpenJobs(!openJobs)} className={`flex justify-between items-center px-3 py-1  hover:bg-base-300 rounded-md cursor-pointer w-full`}><span>Manage Jobs</span> {openJobs ? <FaAngleDown /> : <FaChevronRight />}</p>
                     {
                         openJobs &&
                         <div className="space-y-3 ">
                             <p><NavLink to='/postJobs' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Post Jobs</NavLink> </p>
-                            <p><NavLink to='/allProduct' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>All Jobs</NavLink> </p>
+                            <p><NavLink to='/allJobs' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>All Jobs</NavLink> </p>
                         </div>
                     }
                 </div>
