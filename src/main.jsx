@@ -25,6 +25,8 @@ import JobDetails from './components/Jobs/JobDetails';
 import ManageAllJobs from './components/ManageJobs/ManageAllJobs';
 import ContactUs from './components/ContactUs/ContactUs';
 import ManageUsers from './components/ManageUsers/ManageUsers';
+import AddEmployees from './components/Employees/addEmployees';
+import ManageEmployees from './components/Employees/ManageEmployees';
 
 const router = createBrowserRouter([
   {
@@ -55,15 +57,25 @@ const router = createBrowserRouter([
         path:'/job/:id',
         element: <JobDetails></JobDetails>
       },
-      // fo admin
-      {
-        path:'/allJobs',
-        element: <ManageAllJobs></ManageAllJobs>
-      },
       // for admin 
       {
         path:'/manageUsers',
         element: <ManageUsers></ManageUsers>
+      },
+      // fo admin & moderator
+      {
+        path:'/allJobs',
+        element: <ManageAllJobs></ManageAllJobs>
+      },
+      // for admin & moderator 
+      {
+        path:'/addEmployee',
+        element:<AddEmployees></AddEmployees>
+      },
+      // fo admin & moderator 
+      {
+        path:'/manageEmployee',
+        element:<ManageEmployees></ManageEmployees>
       },
       {
         path:'/contactUs',

@@ -47,11 +47,25 @@ const DashboardNavBar = () => {
             top: 0,
             behavior: "smooth",
         })}><NavLink to='/allJobs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>All Jobs</NavLink></li>
-        
+
+        {
+            role === 'Admin' && <li onClick={() => window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            })}><NavLink to='/manageUsers' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Manage Users</NavLink></li>
+        }
+
+
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",
-        })}><NavLink to='/manageUsers' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Manage Users</NavLink></li>
+        })}><NavLink to='/addEmployee' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Add Employees</NavLink></li>
+
+        <li onClick={() => window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })}><NavLink to='/manageEmployee' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Manage Employees</NavLink></li>
+
 
 
     </>

@@ -108,7 +108,7 @@ const UpdateJobs = () => {
                     <textarea required defaultValue={jobDescription} type='text' name="jobDescription" id="" rows={3} className="border-2 px-3 md:py-1 w-full"></textarea>
                     {/* <input type="textArea" placeholder="" name="photo" id="" className="border-2 px-3 md:py-1 w-full" /> */}
                 </div>
-                <input type="submit" value="Post Job" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' />
+                <input type="submit" value="Update Job" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' />
             </form>
 
         </div>

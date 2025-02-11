@@ -11,7 +11,7 @@ const DashboardSideBar = () => {
     const axiosSecure = useAxiosSecure()
     const [openRatings, setOpenRatings] = useState(false)
     const [openJobs, setOpenJobs] = useState(false)
-    const [openShippings, setOpenShippings] = useState(false)
+    const [openEmployee, setOpenEmployee] = useState(false)
     const [openOrders, setOpenOrders] = useState(false)
 
     const { data: users = {}, isLoading } = useQuery({
@@ -52,26 +52,22 @@ const DashboardSideBar = () => {
                             <p><NavLink to='/allJobs' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>All Jobs</NavLink> </p>
                         </div>
                     }
-                </div>
-
-                <p><NavLink to='/manageUsers' className={({ isActive }) => isActive ? '  w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Manage Users</NavLink> </p>
-
-                <div className={` ${openShippings ? 'bg-base-200' : ''}  bg-opacity-50 space-y-3 rounded-md`}>
-                    <p onClick={() => setOpenShippings(!openShippings)} className={`flex justify-between items-center px-3 py-1 hover:bg-base-300  rounded-md cursor-pointer w-full`}><span>Shippings</span> {openShippings ? <FaAngleDown /> : <FaChevronRight />}</p>
-                    {
-                        openShippings &&
-                        <div className="space-y-3 ">
-                            <p><NavLink to='/addShippingMethod' className={({ isActive }) => isActive ? '   w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>AddShipping</NavLink> </p>
-                            <p><NavLink to='/allShipping' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>AllShipping</NavLink> </p>
-                        </div>
-                    }
-                </div>
-
-
+                </div>  
 
                 {
-                    role === 'Admin' && <p><NavLink to='/allUsers' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>AllUsers</NavLink> </p>
+                    role === 'Admin' && <p><NavLink to='/manageUsers' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Manage Users</NavLink> </p>
                 }
+
+                <div className={` ${openEmployee ? 'bg-base-200' : ''}  bg-opacity-50 space-y-3 rounded-md`}>
+                    <p onClick={() => setOpenEmployee(!openEmployee)} className={`flex justify-between items-center px-3 py-1 hover:bg-base-300  rounded-md cursor-pointer w-full`}><span>Employees</span> {openEmployee ? <FaAngleDown /> : <FaChevronRight />}</p>
+                    {
+                        openEmployee &&
+                        <div className="space-y-3 ">
+                            <p><NavLink to='/addEmployee' className={({ isActive }) => isActive ? '   w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Add Employee</NavLink> </p>
+                            <p><NavLink to='/ManageEmployee' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>All Employee</NavLink> </p>
+                        </div>
+                    }
+                </div> 
 
 
                 <div className={` ${openRatings ? 'bg-base-200' : ''}  bg-opacity-50 space-y-3 rounded-md`}>
