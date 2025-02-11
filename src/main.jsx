@@ -24,6 +24,7 @@ import AllJobs from './components/Jobs/AllJobs';
 import JobDetails from './components/Jobs/JobDetails';
 import ManageAllJobs from './components/ManageJobs/ManageAllJobs';
 import ContactUs from './components/ContactUs/ContactUs';
+import ManageUsers from './components/ManageUsers/ManageUsers';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
       {
         path:'/allJobs',
         element: <ManageAllJobs></ManageAllJobs>
+      },
+      // for admin 
+      {
+        path:'/manageUsers',
+        element: <ManageUsers></ManageUsers>
       },
       {
         path:'/contactUs',

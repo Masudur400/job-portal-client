@@ -54,7 +54,7 @@ const DashboardSideBar = () => {
                     }
                 </div>
 
-
+                <p><NavLink to='/manageUsers' className={({ isActive }) => isActive ? '  w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Manage Users</NavLink> </p>
 
                 <div className={` ${openShippings ? 'bg-base-200' : ''}  bg-opacity-50 space-y-3 rounded-md`}>
                     <p onClick={() => setOpenShippings(!openShippings)} className={`flex justify-between items-center px-3 py-1 hover:bg-base-300  rounded-md cursor-pointer w-full`}><span>Shippings</span> {openShippings ? <FaAngleDown /> : <FaChevronRight />}</p>
