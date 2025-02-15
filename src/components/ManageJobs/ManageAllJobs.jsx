@@ -6,6 +6,7 @@ import { PiHandWavingLight } from 'react-icons/pi';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
 import Loading from '../Loading/Loading';
+import { Helmet } from 'react-helmet';
 
 const ManageAllJobs = () => {
 
@@ -51,6 +52,9 @@ const ManageAllJobs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Manage Jobs</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

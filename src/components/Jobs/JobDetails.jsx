@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import useAxiosPublic from '../Hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '../Loading/Loading';
+import { Helmet } from 'react-helmet';
 
 const JobDetails = () => {
 
@@ -25,6 +26,9 @@ const JobDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Job Details</title>
+            </Helmet>
             <div className='flex gap-3 items-center'>
                 <p className='w-3 h-10 bg-green-500'></p>
                 <p className='text-3xl max-sm:text-xl font-medium my-2'>{jobTitle}</p>

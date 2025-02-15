@@ -4,6 +4,7 @@ import useAxiosSecure from '../Hooks/useAxiosSecure';
 import useAuth from '../Hooks/useAuth';
 import Loading from '../Loading/Loading';
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -71,6 +72,9 @@ const PostJobs = () => {
     return (
         <div className="md:w-1/2 mx-auto my-20 md:p-5 p-3 rounded-lg border border-x-4 border-green-500 shadow-md max-sm:mx-4">
             <Toaster></Toaster>
+            <Helmet>
+                <title>Create Job</title>
+            </Helmet>
             <h3 className="md:text-3xl text-xl font-medium text-center my-2">Create Job</h3>
 
             <form onSubmit={handlePostJob}>
