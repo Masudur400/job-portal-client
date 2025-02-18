@@ -78,7 +78,7 @@ const ManageEmployees = () => {
                                     <p>{employee.position}</p>
                                 </td>
                                 <td> 
-                                <button onClick={() => handleDelete(employee?._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Delete</button>
+                                <button onClick={() => handleDelete(employee?._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Remove</button>
                                 </td>
                             </tr>)
                         }

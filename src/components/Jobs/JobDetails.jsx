@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useAxiosPublic from '../Hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '../Loading/Loading';
@@ -38,7 +38,7 @@ const JobDetails = () => {
             <p>{jobDescription}</p>
 
             <div>
-                <button className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button>
+                <Link to={`/apply/${_id}`}><button className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button></Link>
             </div>
         </div>
     );

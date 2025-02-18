@@ -27,6 +27,7 @@ import ContactUs from './components/ContactUs/ContactUs';
 import ManageUsers from './components/ManageUsers/ManageUsers';
 import AddEmployees from './components/Employees/addEmployees';
 import ManageEmployees from './components/Employees/ManageEmployees';
+import ApplyForm from './components/ApplyForm/ApplyForm';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,15 @@ const router = createBrowserRouter([
         path:'/jobs',
         element: <AllJobs></AllJobs>
       },
+      
+      {
+        path:'/contactUs',
+        element:<ContactUs></ContactUs>
+      },
+      {
+        path:'/apply/:id',
+        element:<ApplyForm></ApplyForm>
+      },
       {
         path:'/job/:id',
         element: <JobDetails></JobDetails>
@@ -77,10 +87,6 @@ const router = createBrowserRouter([
         path:'/manageEmployee',
         element:<ManageEmployees></ManageEmployees>
       },
-      {
-        path:'/contactUs',
-        element:<ContactUs></ContactUs>
-      }
     ]
   },
 
