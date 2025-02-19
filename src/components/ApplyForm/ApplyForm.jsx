@@ -4,6 +4,8 @@ import useAxiosPublic from '../Hooks/useAxiosPublic';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
 import useAuth from '../Hooks/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../Loading/Loading';
 
 const ApplyForm = () => {
 
@@ -11,6 +13,16 @@ const ApplyForm = () => {
     const { user } = useAuth()
     const axiosPublic = useAxiosPublic()
     const axiosSecure = useAxiosSecure()
+
+    const { data: job = {}, isLoading } = useQuery({
+        queryKey: ['job', axiosPublic, id],
+        queryFn: async () => {
+            const res = await axiosPublic.get(`/jobs/${id}`)
+            return res.data
+        }
+    })
+
+    const { _id, jobTitle, jobSkills, cover, jobDescription, date } = job
 
 
     const handleApply = async (e) => {
@@ -24,6 +36,8 @@ const ApplyForm = () => {
         const date = new Date()
 
         const data = {
+            jobTitle,
+            jobSkills,
             name,
             email,
             phone,
@@ -43,6 +57,10 @@ const ApplyForm = () => {
                 }
             })
 
+    }
+
+    if(isLoading){
+        return <Loading></Loading>
     }
 
 
