@@ -28,6 +28,7 @@ import ManageUsers from './components/ManageUsers/ManageUsers';
 import AddEmployees from './components/Employees/addEmployees';
 import ManageEmployees from './components/Employees/ManageEmployees';
 import ApplyForm from './components/ApplyForm/ApplyForm';
+import ManageApplies from './components/ManageApplies/ManageApplies';
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,11 @@ const router = createBrowserRouter([
       {
         path:'/allJobs',
         element: <ManageAllJobs></ManageAllJobs>
+      },
+      // fo admin & moderator
+      {
+        path:'/manageApplies',
+        element:  <ManageApplies></ManageApplies>
       },
       // for admin & moderator 
       {

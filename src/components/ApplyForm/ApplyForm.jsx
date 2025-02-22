@@ -43,7 +43,8 @@ const ApplyForm = () => {
             phone,
             resumeLink,
             userEmail,
-            appliedDate: date
+            appliedDate: date,
+            jobDescription
         }
 
         axiosSecure.post('/applies', data)

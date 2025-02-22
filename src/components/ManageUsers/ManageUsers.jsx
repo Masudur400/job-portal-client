@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 const ManageUsers = () => {
 
     const axiosSecure = useAxiosSecure();
-     
+
 
     const { data: allUser = [], isLoading, refetch } = useQuery({
         queryKey: ['users', axiosSecure],
@@ -16,9 +16,9 @@ const ManageUsers = () => {
             const res = await axiosSecure.get('/users');
             return res.data;
         }
-    }); 
+    });
 
-    
+
 
     const sortedUsers = allUser?.sort((a, b) => {
         if (a.role === 'Admin' && b.role !== 'Admin') return -1;
@@ -39,13 +39,16 @@ const ManageUsers = () => {
             <Helmet>
                 <title>All Users</title>
             </Helmet>
-            <h3 className="text-2xl font-medium mt-2">All Users</h3>
-              
-                <div className="mt-5">
+            <div className='flex items-center gap-3'>
+                <p className='bg-green-500 w-3 h-9'></p>
+                <h3 className="text-2xl font-medium">All Users</h3>
+            </div>
+
+            <div className="mt-5">
                 {
                     sortedUsers?.map((user, idx) => <SingleUser key={user?._id} user={user} idx={idx} refetch={refetch}></SingleUser>)
                 }
-                </div>  
+            </div>
         </div>
     );
 };

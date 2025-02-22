@@ -12,6 +12,7 @@ import useAxiosPublic from "../Hooks/useAxiosPublic";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import Loading from "../Loading/Loading";
+import AllApplication from "./AllApplication";
 
 
 
@@ -255,23 +256,9 @@ const Profile = () => {
         </div>
       </div>
 
-      {/* {
-        role === 'Guest' && <div className="my-5">
-        <Tabs>
-          <TabList> 
-            <Tab>My Orders</Tab>
-            <Tab>Complete Transactions</Tab>
-          </TabList> 
-          
-          <TabPanel>
-             <Orders></Orders> 
-          </TabPanel>
-          <TabPanel>
-              <MyCompletedOrders></MyCompletedOrders>
-          </TabPanel>
-        </Tabs> 
-      </div>
-      } */}
+       <div className="my-10">
+        <AllApplication></AllApplication>
+       </div>
 
     </div>
   );

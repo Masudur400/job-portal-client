@@ -52,6 +52,10 @@ const ManageAllJobs = () => {
 
     return (
         <div>
+            <div className='flex items-center gap-3 mt-5 mb-10'>
+                <p className='bg-green-500 w-3 h-9'></p>
+                <h3 className="text-2xl font-medium">All Jobs</h3>
+            </div>
             <Helmet>
                 <title>Manage Jobs</title>
             </Helmet>
