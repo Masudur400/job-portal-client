@@ -22,13 +22,13 @@ import AuthProviders from './components/Providers/AuthProviders';
 import Profile from './components/Profile/Profile';
 import AllJobs from './components/Jobs/AllJobs';
 import JobDetails from './components/Jobs/JobDetails';
-import ManageAllJobs from './components/ManageJobs/ManageAllJobs';
-import ContactUs from './components/ContactUs/ContactUs';
+import ManageAllJobs from './components/ManageJobs/ManageAllJobs'; 
 import ManageUsers from './components/ManageUsers/ManageUsers';
 import AddEmployees from './components/Employees/addEmployees';
 import ManageEmployees from './components/Employees/ManageEmployees';
 import ApplyForm from './components/ApplyForm/ApplyForm';
 import ManageApplies from './components/ManageApplies/ManageApplies';
+import AboutUs from './components/AboutUs/AboutUs';
 
 const router = createBrowserRouter([
   {
@@ -57,8 +57,8 @@ const router = createBrowserRouter([
       },
       
       {
-        path:'/contactUs',
-        element:<ContactUs></ContactUs>
+        path:'/aboutUs',
+        element: <AboutUs></AboutUs>
       },
       {
         path:'/apply/:id',

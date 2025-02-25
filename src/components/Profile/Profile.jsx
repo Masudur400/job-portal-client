@@ -1,13 +1,13 @@
-import { Helmet } from "react-helmet";  
-import { useQuery } from "@tanstack/react-query"; 
+import { Helmet } from "react-helmet";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 import { RiEdit2Line } from "react-icons/ri";
-import Avatar from "react-avatar"; 
+import Avatar from "react-avatar";
 import { RxCross2 } from "react-icons/rx";
-import { IoCheckmarkSharp } from "react-icons/io5";  
+import { IoCheckmarkSharp } from "react-icons/io5";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
@@ -21,11 +21,11 @@ const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageHostingKey}`;
 
 const Profile = () => {
   const { user, loading } = useAuth();
-  const axiosSecure = useAxiosSecure(); 
-  const axiosPublic = useAxiosPublic() 
+  const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic()
   const [editInfo, setEditInfo] = useState(false)
   const [image, setImage] = useState(null);
-  const [preview, setPreview] = useState(null); 
+  const [preview, setPreview] = useState(null);
 
   const { data: users = {}, isLoading, refetch } = useQuery({
     queryKey: ["users", user?.email, axiosPublic],
@@ -67,8 +67,8 @@ const Profile = () => {
         });
       }
 
-      const imageUrl = imageRes?.data?.data?.url; 
-       
+      const imageUrl = imageRes?.data?.data?.url;
+
 
       const data = {
         name: name,
@@ -140,7 +140,7 @@ const Profile = () => {
   }
 
   return (
-    <div> 
+    <div>
 
       <Helmet>
         <title>Profile</title>
@@ -151,7 +151,7 @@ const Profile = () => {
         <div className=" md:flex  items-center gap-10">
           <div className="flex justify-center items-center relative">
             {preview ? (
-              <div className="relative"> 
+              <div className="relative">
                 <Avatar name={name?.charAt(0)} src={preview} alt='img' className="rounded-full mx-auto border border-base-300" size="224"></Avatar>
                 <p
                   onClick={() => {
@@ -193,7 +193,7 @@ const Profile = () => {
           {
             !editInfo ?
               <div className="gap-6 max-sm:p-2 relative">
-                <div className="w-fit mx-auto my-5 space-y-2"> 
+                <div className="w-fit mx-auto my-5 space-y-2">
                   <p>
                     <span className="font-bold">Name : </span>
                     {name}
@@ -225,24 +225,24 @@ const Profile = () => {
                 </div>
               </div> :
               <form onSubmit={editUserInfo} className="space-y-2 p-3 relative">
-                <div className="flex items-center"> 
+                <div className="flex items-center">
                   <input type="text" name="name" defaultValue={name} placeholder="Name" className="border  border-base-300 px-3 py-1 rounded-md " />
                 </div>
                 {
                   phone ?
-                    <div className="flex items-center"> 
+                    <div className="flex items-center">
                       <input type="text" name="phone" defaultValue={phone} placeholder="Phone" className="border  border-base-300 px-3 py-1 rounded-md" />
                     </div> :
-                    <div className="flex items-center"> 
+                    <div className="flex items-center">
                       <input type="text" name="phone" placeholder="Phone" className="border  border-base-300 px-3 py-1 rounded-md" />
                     </div>
                 }
                 {
                   userLocation ?
-                    <div className="flex items-center"> 
+                    <div className="flex items-center">
                       <input type="text" name="location" defaultValue={userLocation} placeholder="Location" className="border  border-base-300 px-3 py-1 rounded-md" />
                     </div> :
-                    <div className="flex items-center"> 
+                    <div className="flex items-center">
                       <input type="text" name="location" placeholder="Location" className="border  border-base-300 px-3 py-1 rounded-md" />
                     </div>
                 }
@@ -256,9 +256,11 @@ const Profile = () => {
         </div>
       </div>
 
-       <div className="my-10">
-        <AllApplication></AllApplication>
-       </div>
+      {
+        role === "Guest" && <div className="my-10">
+          <AllApplication></AllApplication>
+        </div>
+      }
 
     </div>
   );

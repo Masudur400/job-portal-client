@@ -57,7 +57,7 @@ const NavBar = () => {
         <li onClick={() => window.scrollTo({
             top: 0,
             behavior: "smooth",
-        })}><NavLink to='/contactUs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Contact Us</NavLink></li> 
+        })}><NavLink to='/aboutUs' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>About Us</NavLink></li> 
 
     </>;
 

@@ -7,7 +7,7 @@ import DashboardNavBar from "../NavBar/DashboardNavBar";
 
 const Root = () => {
 
-    const isAdmin = true;
+    const isAdmin = false;
 
     return (
         <div>
