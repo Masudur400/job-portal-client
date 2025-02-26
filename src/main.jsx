@@ -29,11 +29,14 @@ import ManageEmployees from './components/Employees/ManageEmployees';
 import ApplyForm from './components/ApplyForm/ApplyForm';
 import ManageApplies from './components/ManageApplies/ManageApplies';
 import AboutUs from './components/AboutUs/AboutUs';
+import PrivetRoute from './components/PrivetRoute/PrivetRoute';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:  <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:'/',
@@ -49,7 +52,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/profile',
-        element:<Profile></Profile>
+        element:<PrivetRoute>
+          <Profile></Profile>
+        </PrivetRoute>
       },
       {
         path:'/jobs',
@@ -62,7 +67,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/apply/:id',
-        element:<ApplyForm></ApplyForm>
+        element:<PrivetRoute>
+          <ApplyForm></ApplyForm>
+        </PrivetRoute>
       },
       {
         path:'/job/:id',

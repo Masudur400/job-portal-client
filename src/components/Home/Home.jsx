@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import About from "./About";
-import Banner from "./Banner";
-import Employees from "./Employees";
+import Banner from "./Banner"; 
 import Services from "./Services";
 
 const Home = () => {

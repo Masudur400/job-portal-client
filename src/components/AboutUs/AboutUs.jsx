@@ -1,9 +1,13 @@
 import React from 'react';
 import img from '/src/assets/images/handship.jpg'
 import Employees from './Employees/Employees';
+import { Helmet } from 'react-helmet';
 const AboutUs = () => {
     return (
         <div>
+            <Helmet>
+                <title>About Us</title>
+            </Helmet>
             <div className='md:flex md:flex-row-reverse items-center justify-between gap-10 p-2'>
             <div className='flex-1 flex justify-center'>
                 <img src={img} alt="img" className='w-full lg:h-80 ' />

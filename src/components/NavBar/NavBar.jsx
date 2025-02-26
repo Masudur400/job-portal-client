@@ -98,23 +98,7 @@ const NavBar = () => {
                             user ?
                                 <div className="mr-2 lg:mr-6">
                                     <div className="relative">
-                                        <div className="flex gap-5 md:gap-10 justify-start items-center">
-                                            {/* <Link to="/" onClick={() => window.scrollTo({
-                                                top: 0,
-                                                behavior: "smooth",
-                                            })}>
-                                                <div className="relative">
-                                                    <BsCart4 className="text-[1.8rem]" />
-                                                    {
-                                                        carts?.length > 0 && <div className=" absolute top-[-10%] right-[-15%] min-w-[20px] min-h-[20px] text-white text-center">
-                                                            <span className="text-sm bg-green-500 p-1 rounded-full w-full h-full">
-                                                                {carts?.length}
-                                                            </span>
-                                                        </div>
-                                                    }
-                                                </div>
-                                            </Link> */}
-
+                                        <div className="flex gap-5 md:gap-10 justify-start items-center"> 
                                             <div className="flex justify-center items-center border-black rounded-full mt-1">
                                                 <Avatar
                                                     name={name?.charAt(0)}
