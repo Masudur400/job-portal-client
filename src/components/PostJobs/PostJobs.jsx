@@ -5,6 +5,7 @@ import useAuth from '../Hooks/useAuth';
 import Loading from '../Loading/Loading';
 import toast, { Toaster } from 'react-hot-toast';
 import { Helmet } from 'react-helmet';
+import { button } from 'framer-motion/client';
 
 
 
@@ -47,15 +48,15 @@ const PostJobs = () => {
                 date,
             }
             axiosSecure.post('/jobs', data)
-            .then(res =>{
-                if(res.data.insertedId){
-                    toast.success('Job posted successfully!', {
-                        duration: 1000,
-                        position: 'top-center',
-                    })
-                    e.target.reset()
-                }
-            })
+                .then(res => {
+                    if (res.data.insertedId) {
+                        toast.success('Job posted successfully!', {
+                            duration: 1000,
+                            position: 'top-center',
+                        })
+                        e.target.reset()
+                    }
+                })
 
 
         } catch (error) {
@@ -96,7 +97,16 @@ const PostJobs = () => {
                     <textarea required type='text' name="jobDescription" id="" rows={3} className="border-2 px-3 md:py-1 w-full"></textarea>
                     {/* <input type="textArea" placeholder="" name="photo" id="" className="border-2 px-3 md:py-1 w-full" /> */}
                 </div>
-                <input type="submit" value="Post Job" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' />
+                {
+                    user ?
+                        <input type="submit" value="Post Job" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' /> :
+                        <button onClick={() => {
+                            toast.error('please login', {
+                                duration: 1000,
+                                position: 'top-center',
+                            })
+                        }} className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600'>Post Job</button>
+                }
             </form>
 
         </div>

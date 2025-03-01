@@ -6,11 +6,13 @@ import Loading from '../Loading/Loading';
 import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 import toast, { Toaster } from 'react-hot-toast';
+import useAuth from '../Hooks/useAuth';
 
 const ManageEmployees = () => {
 
     const axiosSecure = useAxiosSecure()
     const axiosPublic = useAxiosPublic()
+    const {user} = useAuth()
 
     const { data: employees = [], isLoading, refetch } = useQuery({
         queryKey: ['employees', axiosPublic],
@@ -82,7 +84,14 @@ const ManageEmployees = () => {
                                     <p>{employee.position}</p>
                                 </td>
                                 <td> 
-                                <button onClick={() => handleDelete(employee?._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Remove</button>
+                                {
+                                    user ? 
+                                    <button onClick={() => handleDelete(employee?._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Remove</button> :
+                                    <button onClick={()=>toast.error('please login', {
+                                        duration: 1000,
+                                        position: 'top-center',
+                                    })} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Remove</button>
+                                }
                                 </td>
                             </tr>)
                         }

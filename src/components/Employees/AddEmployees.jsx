@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import toast, { Toaster } from 'react-hot-toast';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
+import useAuth from '../Hooks/useAuth';
 
 
 
@@ -13,6 +14,7 @@ const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageHostingKey}`;
 const AddEmployees = () => {
 
     const axiosSecure = useAxiosSecure()
+    const {user} = useAuth()
 
     const handleAddEmployee = async (e) => {
         e.preventDefault()
@@ -82,7 +84,14 @@ const AddEmployees = () => {
                     <p className="max-sm-text-sm text-medium my-2">Photo*</p>
                     <input required type="file" placeholder="" name="photo" id="" className="border-2 pr-3  w-full" />
                 </div>
-                <input type="submit" value="Add Employee" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' />
+                {
+                    user?
+                    <input type="submit" value="Add Employee" className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600' /> :
+                    <button onClick={()=>toast.error('please login', {
+                        duration: 1000,
+                        position: 'top-center',
+                    })}  className='px-3 py-1 text-white font-medium bg-green-500 w-full my-4 hover:bg-green-600'>Add Employee</button>
+                }
             </form>
 
         </div>

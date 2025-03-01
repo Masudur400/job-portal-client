@@ -7,11 +7,14 @@ import Swal from 'sweetalert2';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
 import Loading from '../Loading/Loading';
 import { Helmet } from 'react-helmet';
+import useAuth from '../Hooks/useAuth';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ManageAllJobs = () => {
 
     const axiosPublic = useAxiosPublic()
     const axiosSecure = useAxiosSecure()
+    const {user} = useAuth()
 
     const { data: jobs = [], isLoading, refetch } = useQuery({
         queryKey: ['jobs', axiosPublic],
@@ -52,6 +55,7 @@ const ManageAllJobs = () => {
 
     return (
         <div>
+            <Toaster></Toaster>
             <div className='flex items-center gap-3 mt-5 mb-10'>
                 <p className='bg-green-500 w-3 h-9'></p>
                 <h3 className="text-2xl font-medium">All Jobs</h3>
@@ -88,9 +92,27 @@ const ManageAllJobs = () => {
 
                                     <Link to={`/job/${job?._id}`}><button className='font-medium px-3 py-1 bg-sky-500 hover:bg-sky-600 text-white rounded-sm'>Details</button></Link>
 
-                                    <button onClick={() => handleDelete(job?._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Delete</button>
+                                    {
+                                        user ? 
+                                        <button onClick={() => handleDelete(job?._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Delete</button> :
+                                        <button onClick={() => {
+                                            toast.error('please login', {
+                                                duration: 1000,
+                                                position: 'top-center',
+                                            })
+                                        }} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Delete</button>
+                                    }
 
-                                    <Link to={`/updateJobs/${job?._id}`}><button className='font-medium px-3 py-1 bg-green-500 hover:bg-green-600 text-white rounded-sm'>Update</button></Link>
+                                    {
+                                        user ?
+                                        <Link to={`/updateJobs/${job?._id}`}><button className='font-medium px-3 py-1 bg-green-500 hover:bg-green-600 text-white rounded-sm'>Update</button></Link> :
+                                         <button onClick={() => {
+                                            toast.error('please login', {
+                                                duration: 1000,
+                                                position: 'top-center',
+                                            })
+                                        }} className='font-medium px-3 py-1 bg-green-500 hover:bg-green-600 text-white rounded-sm'>Update</button> 
+                                    }
 
                                 </th>
                             </tr>)

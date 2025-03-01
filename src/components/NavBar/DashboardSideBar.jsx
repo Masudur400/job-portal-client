@@ -8,11 +8,9 @@ import { MdLogin, MdLogout } from 'react-icons/md';
 
 const DashboardSideBar = () => {
     const { user, logOut, loading } = useAuth()
-    const axiosSecure = useAxiosSecure()
-    const [openRatings, setOpenRatings] = useState(false)
+    const axiosSecure = useAxiosSecure() 
     const [openJobs, setOpenJobs] = useState(false)
-    const [openEmployee, setOpenEmployee] = useState(false)
-    const [openOrders, setOpenOrders] = useState(false)
+    const [openEmployee, setOpenEmployee] = useState(false) 
 
     const { data: users = {}, isLoading } = useQuery({
         queryKey: ['users', user?.email, axiosSecure],
@@ -70,29 +68,7 @@ const DashboardSideBar = () => {
                         </div>
                     }
                 </div>
-
-
-                <div className={` ${openRatings ? 'bg-base-200' : ''}  bg-opacity-50 space-y-3 rounded-md`}>
-                    <p onClick={() => setOpenRatings(!openRatings)} className={`flex justify-between items-center px-3 py-1 hover:bg-base-300 rounded-md cursor-pointer w-full`}><span>Ratings & Reviews</span> {openRatings ? <FaAngleDown /> : <FaChevronRight />}</p>
-                    {
-                        openRatings &&
-                        <div className="space-y-3 ">
-                            <p><NavLink to='/appRatings' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>App Reviews</NavLink> </p>
-                            <p><NavLink to='/productRatings' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Product Reviews</NavLink> </p>
-                        </div>
-                    }
-                </div>
-
-                <div className={` ${openOrders ? 'bg-base-200' : ''}  bg-opacity-50 space-y-3 rounded-md`}>
-                    <p onClick={() => setOpenOrders(!openOrders)} className={`flex justify-between items-center px-3 py-1 hover:bg-base-300 rounded-md cursor-pointer w-full`}><span>Manage Orders</span> {openOrders ? <FaAngleDown /> : <FaChevronRight />}</p>
-                    {
-                        openOrders &&
-                        <div className="space-y-3 ">
-                            <p><NavLink to='/orders' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Orders</NavLink> </p>
-                            <p><NavLink to='/completeOrders' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Complete Orders</NavLink> </p>
-                        </div>
-                    }
-                </div>
+ 
 
 
                 <p><NavLink to='/profile' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Profile</NavLink> </p>
