@@ -13,7 +13,7 @@ const Root = () => {
         <div>
             <div>
                 {
-                     isAdmin  ?
+                    isAdmin ?
                         // admin outlate 
                         <div className="">
                             {/* small devide dashboard  */}
