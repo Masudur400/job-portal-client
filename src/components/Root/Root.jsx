@@ -3,11 +3,12 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import DashboardSideBar from "../NavBar/DashboardSideBar";
 import DashboardNavBar from "../NavBar/DashboardNavBar";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Root = () => {
 
-    const isAdmin = false;
+    const [isAdmin, isAdminLoading] = useAdmin()
 
     return (
         <div>
