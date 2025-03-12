@@ -4,17 +4,24 @@ import Footer from "../Footer/Footer";
 import DashboardSideBar from "../NavBar/DashboardSideBar";
 import DashboardNavBar from "../NavBar/DashboardNavBar";
 import useAdmin from "../Hooks/useAdmin";
+import useModerator from "../Hooks/useModerator";
+import Loading from "../Loading/Loading";
 
 
 const Root = () => {
 
     const [isAdmin, isAdminLoading] = useAdmin()
+    const [isModerator, isModeratorLoading] = useModerator()
+
+    if(isModeratorLoading || isAdminLoading){
+        return <Loading></Loading>
+    }
 
     return (
         <div>
             <div>
                 {
-                    isAdmin ?
+                    isAdmin || isModerator ?
                         // admin outlate 
                         <div className="">
                             {/* small devide dashboard  */}

@@ -30,9 +30,11 @@ const DashboardSideBar = () => {
     return (
         <div className="p-7 space-y-5 font-medium">
             <div>
+                <Link to='/'>
                 <p title="Home" className="lg:text-4xl text-xl md:text-2xl font-bold text-center">
                     <span className="">NextGen</span>
                 </p>
+                </Link>
                 <p className="opacity-90 font-medium text-center">Admin Dashboard</p>
                 <p className="opacity-90 text-sm font-medium text-center"> {user?.email}</p>
                 <div className="border-b-2 my-3 border-green-500"></div>
