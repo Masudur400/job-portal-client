@@ -71,6 +71,16 @@ const DashboardNavBar = () => {
             behavior: "smooth",
         })}><NavLink to='/manageApplies' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Manage Applies</NavLink></li>
 
+        <li onClick={() => window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })}><NavLink to='/postProjects' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Post Projects</NavLink></li>
+
+        <li onClick={() => window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })}><NavLink to='/manageProjects' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-green-500 border-b-2 border-green-500 rounded-md p-2' : 'hover:text-green-500 p-2'}>Manage Projects</NavLink></li>
+
 
 
     </>

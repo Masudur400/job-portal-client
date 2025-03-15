@@ -31,6 +31,8 @@ import ManageApplies from './components/ManageApplies/ManageApplies';
 import AboutUs from './components/AboutUs/AboutUs';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import ManageProjects from './components/ManageProjects/ManageProjects';
+import PostProjects from './components/ManageProjects/PostProjects';
 
 const router = createBrowserRouter([
   {
@@ -99,6 +101,16 @@ const router = createBrowserRouter([
       {
         path:'/manageEmployee',
         element:<ManageEmployees></ManageEmployees>
+      },
+      // fo admin & moderator 
+      {
+        path:'/postProjects',
+        element: <PostProjects></PostProjects>
+      },
+      // fo admin & moderator 
+      {
+        path:'/manageProjects',
+        element: <ManageProjects></ManageProjects>
       },
     ]
   },

@@ -11,6 +11,7 @@ const DashboardSideBar = () => {
     const axiosSecure = useAxiosSecure() 
     const [openJobs, setOpenJobs] = useState(false)
     const [openEmployee, setOpenEmployee] = useState(false) 
+    const [openProjects, setOpenProjects] = useState(false) 
 
     const { data: users = {}, isLoading } = useQuery({
         queryKey: ['users', user?.email, axiosSecure],
@@ -64,9 +65,20 @@ const DashboardSideBar = () => {
                     <p onClick={() => setOpenEmployee(!openEmployee)} className={`flex justify-between items-center px-3 py-1 hover:bg-base-300  rounded-md cursor-pointer w-full`}><span>Employees</span> {openEmployee ? <FaAngleDown /> : <FaChevronRight />}</p>
                     {
                         openEmployee &&
-                        <div className="space-y-3 ">
+                        <div className="space-y-3">
                             <p><NavLink to='/addEmployee' className={({ isActive }) => isActive ? '   w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Add Employee</NavLink> </p>
                             <p><NavLink to='/ManageEmployee' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>All Employee</NavLink> </p>
+                        </div>
+                    }
+                </div>
+
+                <div className={` ${openProjects ? 'bg-base-200' : ''}  bg-opacity-50 space-y-3 rounded-md`}>
+                    <p onClick={() => setOpenProjects(!openProjects)} className={`flex justify-between items-center px-3 py-1 hover:bg-base-300  rounded-md cursor-pointer w-full`}><span>Manage Projects</span> {openProjects ? <FaAngleDown /> : <FaChevronRight />}</p>
+                    {
+                        openProjects &&
+                        <div className="space-y-3">
+                            <p><NavLink to='/postProjects' className={({ isActive }) => isActive ? '   w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>Post Projects</NavLink> </p>
+                            <p><NavLink to='/ManageProjects' className={({ isActive }) => isActive ? '    w-full bg-green-500 text-white px-3 py-1 block rounded-md' : 'hover:text-green-500 hover:bg-base-300 px-3 py-1 rounded-md w-full block'}>All Projects</NavLink> </p>
                         </div>
                     }
                 </div>
