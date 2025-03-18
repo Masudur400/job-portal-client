@@ -45,17 +45,17 @@ const PostProjects = () => {
                 projectURL,
                 date,
             }
-            console.log(data);
-            // axiosSecure.post('/jobs', data)
-            //     .then(res => {
-            //         if (res.data.insertedId) {
-            //             toast.success('Job posted successfully!', {
-            //                 duration: 1000,
-            //                 position: 'top-center',
-            //             })
-            //             e.target.reset()
-            //         }
-            //     })
+            // console.log(data)
+            axiosSecure.post('/projects', data)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        toast.success('upload project successfully!', {
+                            duration: 1000,
+                            position: 'top-center',
+                        })
+                        e.target.reset()
+                    }
+                })
 
 
         } catch (error) {
@@ -67,7 +67,7 @@ const PostProjects = () => {
     return (
         <div className="md:w-1/2 mx-auto my-20 md:p-5 p-3 rounded-lg border border-x-4 border-green-500 shadow-md max-sm:mx-4">
         <Helmet>
-            <title>Add Employee</title>
+            <title>Add Project</title>
         </Helmet>
         <Toaster></Toaster>
         <h3 className="md:text-3xl text-xl font-medium text-center my-2">Add Project</h3>
