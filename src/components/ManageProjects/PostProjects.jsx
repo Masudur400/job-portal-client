@@ -22,6 +22,7 @@ const PostProjects = () => {
         const form = new FormData(e.currentTarget)
         const projectName = form.get('projectName')
         const projectURL = form.get('projectURL')
+        const technologies = form.get('technologies')
         const photoFile = form.get('photo'); 
         const date = new Date()
 
@@ -41,6 +42,7 @@ const PostProjects = () => {
 
             const data = {
                 projectName, 
+                technologies,
                 projectCover: imageUrl, 
                 projectURL,
                 date,
@@ -76,11 +78,15 @@ const PostProjects = () => {
 
             <div>
                 <p className='max-sm-text-sm text-medium my-2'>Project Name*</p>
-                <input required type="text" name="projectName" id="" placeholder='Enter name' className='border-2 px-3 md:py-1 w-full' />
+                <input required type="text" name="projectName" id="" placeholder='Enter project name' className='border-2 px-3 md:py-1 w-full' />
             </div>
             <div>
                 <p className='max-sm-text-sm text-medium my-2'>Project Live URL*</p>
-                <input required type="text" name="projectURL" id="" placeholder='Enter position' className='border-2 px-3 md:py-1 w-full' />
+                <input required type="text" name="projectURL" id="" placeholder='Enter Live URL' className='border-2 px-3 md:py-1 w-full' />
+            </div>
+            <div>
+                <p className='max-sm-text-sm text-medium my-2'>Project Technologies*</p>
+                <input required type="text" name="technologies" id="" placeholder='Enter Technologies' className='border-2 px-3 md:py-1 w-full' />
             </div>
             <div>
                 <p className="max-sm-text-sm text-medium my-2">Project Cover*</p>
