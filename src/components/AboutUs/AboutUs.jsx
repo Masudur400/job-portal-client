@@ -2,6 +2,7 @@ import React from 'react';
 import img from '/src/assets/images/handship.jpg'
 import Employees from './Employees/Employees';
 import { Helmet } from 'react-helmet';
+import Projects from './Projects/Projects';
 const AboutUs = () => {
     return (
         <div>
@@ -19,6 +20,7 @@ const AboutUs = () => {
             </div> 
         </div>
         <Employees></Employees>
+        <Projects></Projects>
         </div>
     );
 };
