@@ -68,7 +68,7 @@ const ManageProjects = () => {
                                     <Link to={project.projectURL} target='blank'><button className='font-medium px-3 py-1 bg-sky-500 hover:bg-sky-600 text-white rounded-sm'>View Project</button></Link>
                                 </div>
                                 <div>
-                                    <button onClick={()=>deleteProject(project._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>View Project</button>
+                                    <button onClick={()=>deleteProject(project._id)} className='font-medium px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-sm'>Delete Project</button>
                                 </div>
                             </td>
                         </tr>)
