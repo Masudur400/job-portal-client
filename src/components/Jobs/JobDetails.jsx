@@ -20,6 +20,15 @@ const JobDetails = () => {
             return res.data
         }
     })
+    const { data: users = {}, userIsLoading } = useQuery({
+        queryKey: ['users', axiosPublic, user?.email],
+        queryFn: async () => {
+            const res = await axiosPublic.get(`/users/${user?.email}`)
+            return res.data
+        }
+    })
+
+    const { role } = users
 
     const { _id, jobTitle, jobSkills, cover, jobDescription, date } = job
 
@@ -43,9 +52,9 @@ const JobDetails = () => {
 
             <div>
                 {
-                    user ?
+                    user?
                         <Link to={`/apply/${_id}`}><button className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button></Link> :
-                        <button onClick={()=>toast.error('Please login', {
+                        <button onClick={() => toast.error('Please login', {
                             duration: 1000,
                             position: 'top-center',
                         })} className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button>
