@@ -52,12 +52,23 @@ const JobDetails = () => {
 
             <div>
                 {
-                    user?
-                        <Link to={`/apply/${_id}`}><button className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button></Link> :
+                   role === 'Guest' &&
+                        <Link to={`/apply/${_id}`}><button className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button></Link> 
+                        // :
+                        // <button onClick={() => toast.error('Please login', {
+                        //     duration: 1000,
+                        //     position: 'top-center',
+                        // })} className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button>
+                }
+            </div>
+            <div>
+                {
+                    !user?
+                        
                         <button onClick={() => toast.error('Please login', {
                             duration: 1000,
                             position: 'top-center',
-                        })} className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button>
+                        })} className='px-3 py-1 rounded-sm font-medium text-white bg-green-500 my-3'>Apply Now</button> :''
                 }
             </div>
         </div>
