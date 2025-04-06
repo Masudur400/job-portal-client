@@ -33,6 +33,7 @@ import PrivetRoute from './components/PrivetRoute/PrivetRoute';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import ManageProjects from './components/ManageProjects/ManageProjects';
 import PostProjects from './components/ManageProjects/PostProjects';
+import ContactUs from './components/ContactUs/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path:'/aboutUs',
         element: <AboutUs></AboutUs>
+      },
+      {
+        path:'/contactUs',
+        element: <ContactUs></ContactUs>
       },
       {
         path:'/apply/:id',
