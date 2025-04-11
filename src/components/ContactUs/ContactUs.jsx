@@ -8,6 +8,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { CgFacebook } from "react-icons/cg";
 import { BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 
+
 const ContactUs = () => {
 
     const form = useRef();
@@ -57,12 +58,12 @@ const ContactUs = () => {
                     <div className="w-full flex flex-col items-center justify-center">
                         <h1 className="text-4xl font-bold">Contact Us</h1>
                         <p className="text-[1rem] font-medium opacity-75 my-3">Write Your FeedBack and Problem</p>
-                        {
+                        {/* {
                             successMessage && <p className='text-green-500'>{successMessage}</p>
                         }
                         {
                             errorMessage && <p className='text-red-500'>{errorMessage}</p>
-                        }
+                        } */}
                     </div>
 
                     <div className='md:flex gap-6 mt-5'>
