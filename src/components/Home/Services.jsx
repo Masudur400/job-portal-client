@@ -1,4 +1,12 @@
 import React from 'react';
+import img1 from '../../assets/images/download-1.png'
+import img2 from '../../assets/images/download-2.jpg'
+import img3 from '../../assets/images/download-3.jpg'
+import img4 from '../../assets/images/download-4.jpg'
+import img5 from '../../assets/images/download-5.png'
+import img6 from '../../assets/images/download-6.jpg'
+import img7 from '../../assets/images/download-7.jpg'
+import img8 from '../../assets/images/download-8.png'
 
 const Services = () => {
 
@@ -6,42 +14,42 @@ const Services = () => {
         {
             id:1,
             service: 'Custom Software Development',
-            img:'/src/assets/images/download-1.png',
+            img:img1,
         },
         {
             id:2,
             service: 'Web & Mobile App Development',
-            img:'/src/assets/images/download-2.jpg',
+            img:img2,
         },
         {
             id:3,
             service: 'AI & Machine Learning',
-            img:'/src/assets/images/download-3.jpg',
+            img:img3,
         },
         {
             id:4,
             service: 'Cloud Computing & DevOps',
-            img:'/src/assets/images/download-4.jpg',
+            img:img4,
         },
         {
             id:5,
             service: 'Cybersecurity & Risk Management',
-            img:'/src/assets/images/download-5.png',
+            img:img5,
         },
         {
             id:6,
             service: 'E-Commerce Solutions',
-            img:'/src/assets/images/download-6.jpg',
+            img:img6,
         },
         {
             id:7,
             service: 'Digital Marketing & SEO',
-            img:'/src/assets/images/download-7.jpg',
+            img:img7,
         },
         {
             id:8,
             service: 'Ui/Ux Design',
-            img:'/src/assets/images/download-8.png',
+            img:img8,
         },
     ]
 
