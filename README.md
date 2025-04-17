@@ -1,7 +1,14 @@
 ## Well Come To NextGen :(Service Site)
 
 ## OverView
-This project is a complete platform where users can explore the company's services, job postings, employees, and completed projects, as well as contact the company directly. Users have the ability to apply for jobs based on their qualifications and view their submitted applications from their personal profile page. The admin dashboard is beautifully designed with powerful features, allowing seamless management of all aspects of the platform. The admin homepage displays key statistics, including total users, employees, completed projects, job posts, and applications, along with a visual chart for better insights. Overall, the system ensures smooth and efficient management by giving admins full control over user roles, job listings, employees, and project data.
+● Users will be able to view our services, job posts, our employees, completed projects, and can
+also contact us.
+● Users can apply to job posts according to their qualifications, and they will be able to see their
+applications on their profile page.
+● The admin dashboard is beautifully designed and includes excellent features.
+● On the admin homepage, total users, total employees, total completed projects, total job posts,
+total applications, and a chart have been implemented.
+● The admin can manage all user roles, jobs, employees, and projects.
 
 * live link : https://job-portal-18a73.web.app/
 * client site github : https://github.com/Masudur400/job-portal-client
